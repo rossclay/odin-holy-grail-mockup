@@ -3,10 +3,14 @@
   padding: 0;
 }
 
+body {
+  height: 100vh;
+}
+
 .container {
   text-align: center;
   display: grid;
-  grid-template: [start]2fr 1fr 4fr 1fr[end] / [start]1fr 4fr[end];
+  grid-template: [start].5fr .5fr 4fr 1fr[end] / [start]1fr 4fr[end];
   gap: 4px;
 }
 
@@ -22,7 +26,22 @@
   background-color: #393f4d;
   display: grid;
   grid-area: start / start / start / end;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 4fr;
+}
+
+.menu {
+  display: grid;
+  align-items: center;
+}
+
+.header .logo {
+  justify-self: start;
+  align-self: center;
+}
+
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .menu ul,
@@ -45,6 +64,8 @@
   font-size: 12px;
   font-weight: normal;
   border-radius: 10px;
+  display: grid;
+  align-items: center;
 }
 
 
@@ -53,22 +74,32 @@
   color: black;
   font-size: 16px;
   font-weight: normal;
+  display: grid;
+  align-items: center;
 }
 
 .nav {
-  background-color: #C50208;
   display: grid;
-  grid-area: 2 / 2 / end / 2
+  align-items: center;
+  background-color: #C50208;
+  grid-area: 2 / 2 / 3 / 2;
+  gap: 4px;
+}
+
+.nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .nav ul li {
   font-size: 16px;
   text-transform: uppercase;
+  list-style: none;
 }
 
 .article {
   background-color: #bccbde;
-  grid-area: 2 / 2 / end / end;
+  grid-area: 3 / 2 / end / end;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(4, 1fr);
   gap: 15px;
@@ -85,6 +116,7 @@
   background-color: #FFFFFF;
   color: black;
   text-align: center;
+  height: 200px;
 }
 
 .card p {
